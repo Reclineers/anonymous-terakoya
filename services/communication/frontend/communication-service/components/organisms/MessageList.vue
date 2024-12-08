@@ -1,14 +1,5 @@
-<script setup lang="ts">
-import type { Message } from "@/types/chat";
-import MessageBubble from "~/components/molecules/MessageBubble.vue";
-
-defineProps<{
-  messages: Message[];
-}>();
-</script>
-
 <template>
-  <div class="flex flex-col space-y-2 p-4">
+  <div class="message-list">
     <MessageBubble
       v-for="message in messages"
       :key="message.id"
@@ -16,3 +7,19 @@ defineProps<{
     />
   </div>
 </template>
+
+<script setup lang="ts">
+import { useChat } from "~/composables/chat";
+import MessageBubble from "~/components/molecules/MessageBubble.vue";
+
+const { messages } = useChat();
+</script>
+
+<style lang="scss" scoped>
+.message-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+</style>

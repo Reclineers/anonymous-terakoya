@@ -1,0 +1,16 @@
+{
+  "editor.tabSize": 2,
+  "path-autocomplete.pathMappings": {
+    "~": "${folder}",
+    "@": "${folder}"
+  },
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "nuxt.isNuxtApp": false
+}
