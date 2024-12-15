@@ -4,6 +4,19 @@ definitions:
       status:
         type: string
     type: object
+  messages.readMessagesResponse:
+    properties:
+      content:
+        type: string
+      id:
+        type: string
+      isOwn:
+        type: boolean
+      timestamp:
+        type: string
+      userId:
+        type: string
+    type: object
 host: localhost:8080
 info:
   contact: {}
@@ -25,4 +38,18 @@ paths:
       summary: ヘルスチェック
       tags:
       - health
+  /v1/messages:
+    get:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/messages.readMessagesResponse'
+      summary: メッセージ一覧を取得する
+      tags:
+      - messages
 swagger: "2.0"
