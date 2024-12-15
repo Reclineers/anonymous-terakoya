@@ -37,6 +37,28 @@ const docTemplate = `{
                     }
                 }
             }
+        },
+        "/v1/messages": {
+            "get": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "messages"
+                ],
+                "summary": "メッセージ一覧を取得する",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/messages.readMessagesResponse"
+                        }
+                    }
+                }
+            }
         }
     },
     "definitions": {
@@ -44,6 +66,26 @@ const docTemplate = `{
             "type": "object",
             "properties": {
                 "status": {
+                    "type": "string"
+                }
+            }
+        },
+        "messages.readMessagesResponse": {
+            "type": "object",
+            "properties": {
+                "content": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "isOwn": {
+                    "type": "boolean"
+                },
+                "timestamp": {
+                    "type": "string"
+                },
+                "userId": {
                     "type": "string"
                 }
             }
