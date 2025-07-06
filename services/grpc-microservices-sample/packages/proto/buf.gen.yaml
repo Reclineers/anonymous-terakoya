@@ -1,0 +1,13 @@
+# services/grpc-microservices-sample/packages/proto/buf.gen.yaml
+version: v1
+plugins:
+  - plugin: buf.build/bufbuild/es:v1.6.0
+    out: gen
+    opt:
+      - target=ts
+      - import_extension=.js
+  - plugin: buf.build/connectrpc/es:v1.2.0
+    out: gen
+    opt:
+      - target=ts
+      - import_extension=.js
