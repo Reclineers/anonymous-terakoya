@@ -1,0 +1,22 @@
+{
+  "name": "gRPC Microservices",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "dev",
+  "workspaceFolder": "/workspace",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "Vue.volar",
+        "zxh404.vscode-proto3"
+      ]
+    }
+  },
+  "postCreateCommand": "npm install -g pnpm && pnpm install",
+  "forwardPorts": [3000, 3001, 4000, 5001, 5002]
+}

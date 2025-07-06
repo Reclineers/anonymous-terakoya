@@ -1,0 +1,16 @@
+// services/grpc-microservices-sample/packages/proto/tsconfig.json
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "lib": ["ES2022"],
+    "moduleResolution": "node",
+    "declaration": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "outDir": "./gen"
+  },
+  "include": ["gen/**/*"]
+}
